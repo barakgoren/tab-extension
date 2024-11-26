@@ -12,7 +12,7 @@ chrome.runtime.sendMessage({ type: "GET_TAB_DATA" }, (response) => {
   if (chrome.runtime.lastError) {
     console.error("Error:", chrome.runtime.lastError.message);
   } else {
-    console.log("Received tab data:", response);
+    // console.log("Received tab data:", response);
   }
 });
 

@@ -23,7 +23,6 @@ saveButton.addEventListener("click", () => {
     }
     // Save threshold and ignored URLs
     const urls = Array.from(ignoredList.children).map((li) => { var _a; return ((_a = li.firstChild) === null || _a === void 0 ? void 0 : _a.textContent) || ""; });
-    console.log("urls", urls);
     chrome.storage.sync.set({ inactivityThreshold: threshold, ignoredUrls: urls }, () => {
         statusMessage.textContent = "Settings saved!";
         setTimeout(() => (statusMessage.textContent = ""), 2000);

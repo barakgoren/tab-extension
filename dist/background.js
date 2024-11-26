@@ -68,7 +68,6 @@ setInterval(() => {
             const inactiveTime = now - lastActive;
             // Skip ignored URLs
             if (ignoredUrls.some((ignoredUrl) => tab.url.startsWith(ignoredUrl))) {
-                console.log(`Tab ${tab.id} is ignored: ${tab.url}`);
                 // Update the last active time to prevent closing the tab
                 tabActivity[tab.id] = now;
                 return;
@@ -76,7 +75,6 @@ setInterval(() => {
             if (inactiveTime > INACTIVITY_THRESHOLD &&
                 !tab.pinned &&
                 !tab.active) {
-                console.log(`Closing tab ${tab.id} due to inactivity.`);
                 chrome.tabs.remove(tab.id, () => {
                     if (chrome.runtime.lastError) {
                         console.error(`Error closing tab ${tab.id}:`, chrome.runtime.lastError);
