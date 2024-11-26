@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Tab Closer Settings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Settings</h1>
+    <label for="inactivity-threshold">Inactivity Threshold (minutes):</label>
+    <input type="number" id="inactivity-threshold" min="1" value="5" />
+    
+    <h2>Ignored URLs</h2>
+    <label for="ignored-url">Add URL to Ignore:</label>
+    <input type="text" id="ignored-url" placeholder="https://example.com" />
+    <button id="add-url">Add</button>
+    <ul id="ignored-list"></ul>
+    
+    <button id="save-settings">Save Settings</button>
+    <p id="status-message"></p>
+  </div>
+  
+  <script src="dist/options.js" type="module"></script>
+</body>
+</html>
